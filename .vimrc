@@ -213,6 +213,9 @@ function! s:hooks.on_source(bundle)
     let g:jedi#goto_assignments_command = '<Leader>G'
 endfunction
 
+" docstringは表示しない
+autocmd FileType python setlocal completeopt-=preview
+
 "-------------------------
 " neocomlete Settings.
 "-------------------------
@@ -299,6 +302,12 @@ endif
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" jedi python用  ポップアップを出さないとか
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
 
 "-------------------------
 " neosnippet config
