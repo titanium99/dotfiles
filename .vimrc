@@ -106,6 +106,7 @@ NeoBundle 'Shougo/vimproc.vim', {
       \     'unix': 'gmake',
       \    },
       \ } " 非同期処理を実施するために必要なプラグイン
+NeoBundle 'tpope/vim-obsession' " vimのセッション保存・復元
 
 NeoBundle 'tpope/vim-surround' " カッコ等囲んでいるものに対して操作をするプラグイン
 NeoBundle 'thinca/vim-qfreplace.git' " grep後のリスト内での置換を可能にする
@@ -175,7 +176,7 @@ let QFixHowm_Key = 'g'
 
 " howm_dirはファイルを保存したいディレクトリを設定
 let howm_dir             = '~/howm'
-let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.txt'
+let howm_filename        = '%Y/%m/%Y-%m-%d-%H%M%S.hown'
 let howm_fileencoding    = 'utf-8'
 let howm_fileformat      = 'unix'
 
@@ -462,3 +463,19 @@ map <silent> [Tag]p :tabprevious<CR>
 " tp 前のタブ
 
 
+"______________
+" open-browser setting
+"______________
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+
+"______________
+" NERDTree setting
+"______________
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden = 1
+ 
+" デフォルトでツリーを表示させる
+" autocmd VimEnter * execute 'NERDTree'

@@ -101,9 +101,31 @@ tmux デタッチ| <c-t> d
 % tmux attach
 ```
 
-9. 作業終了
+9. セッション保存
+再起動に備えて、セッションを保存するためtmux-plugins/tmux-resurrectというtmuxプラグインを使用。
+参考
+[【Vim × tmux】アプデによる再起動も怖くない！ セッションの保存・復元を実現する](http://qiita.com/izumin5210/items/345b2c331659d5d1f136)
+http://kiririmode.hatenablog.jp/entry/20150206/1423148400
+
+使い方
+```
+prefix(C-t)+C-s
+```
+というキーバインドを実行後、tmux のステータスラインに
+```
+Tmux environment saved!
+```
+と出れば完了
 
 
+10. 作業終了
+
+11. 作業再開
+保存したセッションを使いたい場合は、
+```
+prefix(C-t)+C-s
+```
+を実行。
 #### vim基本操作  
 [Vimの使い方 よく使うコマンドまとめ | Memo on the Web](http://motw.mods.jp/Vim/command.html)
 
